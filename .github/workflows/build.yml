@@ -1,0 +1,13 @@
+name: Build
+on:
+  push:
+    branches: ["main"]
+jobs:
+  build:
+    name: Build C# program
+    runs-on: self-hosted
+    steps:
+      - name: checkout repo
+        run: actions/checkout@v3
+      - name: dotnet
+        run: dotnet build
